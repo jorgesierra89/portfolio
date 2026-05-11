@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jorge Sierra Martínez | Desarrollador de Software e IA</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav>
         <div class="container">
-            <span class="logo">TN</span>
+            <span class="logo">JS</span>
             <ul>
                 <li><a href="#sobre-mi">Sobre mí</a></li>
                 <li><a href="#proyectos">Proyectos</a></li>
@@ -22,15 +23,17 @@
     <header class="hero">
         <div class="container hero-flex">
             <div class="hero-image">
-                <img src="mifoto.jpg" alt="Foto" class="profile-img">
+                <img src="mifoto.jpg" alt="Jorge Sierra Martínez" class="profile-img">
             </div>
             <div class="hero-content">
                 <h1>Hola, soy <span class="highlight">Jorge Sierra Martínez</span></h1>
-                <p class="subtitle">Desarrollador enfocado en IA y Soluciones Eficientes</p>
-                <p>Transformando la experiencia en Trabajo Social en software con impacto humano.</p>
+                <p class="subtitle">Desarrollador de Software enfocado en IA y Soluciones Cloud</p>
+                <p>Transformando la experiencia en el sector social en software escalable con impacto humano.</p>
                 <div class="cta-buttons">
                     <a href="#proyectos" class="btn primary">Ver Proyectos</a>
-                    <a href="https://www.linkedin.com/in/jorge-sierra-mart%C3%ADnez-3b14b869/" target="_blank" class="btn secondary">LinkedIn</a>
+                    <a href="https://www.linkedin.com/in/jorge-sierra-mart%C3%ADnez-3b14b869/" target="_blank" class="btn secondary">
+                        <i class="fa-brands fa-linkedin"></i> LinkedIn
+                    </a>
                 </div>
             </div>
         </div>
@@ -40,14 +43,15 @@
         <h2>Sobre mí</h2>
         <div class="about-grid">
             <div class="about-text">
-                <p>Tras 5 años en el sector social, decidí dar un giro a mi carrera hacia mi verdadera pasión: la tecnología. Mi enfoque combina la lógica técnica con la empatía y resolución de problemas del mundo real.</p>
-                <p>Especializado en Python, integración de modelos de lenguaje (LLM) y gestión de infraestructura en la nube.</p>
+                <p>Tras 5 años en el sector social, decidí dar un giro a mi carrera hacia la tecnología. Mi enfoque combina la lógica técnica con la resolución de problemas complejos del mundo real.</p>
+                <p>Especializado en el desarrollo de <strong>Sistemas RAG (Retrieval-Augmented Generation)</strong>, automatización de infraestructura y despliegue de modelos de lenguaje.</p>
             </div>
             <div class="skills">
                 <span class="tag">Python</span>
+                <span class="tag">Node.js</span>
                 <span class="tag">Docker</span>
                 <span class="tag">FastAPI</span>
-                <span class="tag">JavaScript</span>
+                <span class="tag">GitHub Actions</span>
                 <span class="tag">Hugging Face</span>
                 <span class="tag">Vercel</span>
             </div>
@@ -57,16 +61,40 @@
     <section id="proyectos" class="bg-light">
         <div class="container">
             <h2>Proyectos Destacados</h2>
-            <div class="project-card">
+            
+            <div class="project-card featured">
                 <div class="project-info">
-                    <h3>Cellectia - Ecosistema de IA Educativa</h3>
-                    <p>Sistema RAG avanzado diseñado para entornos educativos. Permite consultas en lenguaje natural basadas en documentación técnica real.</p>
-                    <ul>
-                        <li><strong>Arquitectura:</strong> Dockerizado en Hugging Face con aceleración GPU bajo demanda.</li>
-                        <li><strong>Control:</strong> Panel de gestión en Vercel para optimización de costes y programación horaria.</li>
-                        <li><strong>Seguridad:</strong> Implementación de flujos seguros de tokens y gestión de secretos.</li>
-                    </ul>
-                    <p class="status-note"><em>* Proyecto en uso activo por entidad educativa. Código disponible bajo petición.</em></p>
+                    <div class="project-header">
+                        <h3>Cellectia - Ecosistema de IA Educativa</h3>
+                        <span class="badge">Full-Stack & DevOps</span>
+                    </div>
+                    <p>Arquitectura integral de IA diseñada para entornos educativos, permitiendo consultas inteligentes sobre documentación técnica masiva.</p>
+                    
+                    <div class="project-details">
+                        <div class="detail-item">
+                            <i class="fa-solid fa-layer-group"></i>
+                            <p><strong>RAG Avanzado:</strong> Procesamiento de lenguaje natural vectorizado para respuestas precisas.</p>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fa-solid fa-server"></i>
+                            <p><strong>Infraestructura:</strong> Dockerizado en Hugging Face con escalado de hardware dinámico (CPU/T4 GPU).</p>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fa-solid fa-gears"></i>
+                            <p><strong>Control Hub:</strong> Panel de gestión personalizado en Vercel con API propia para control de costes y programación de tareas.</p>
+                        </div>
+                    </div>
+
+                    <div class="project-actions">
+                        <a href="https://tu-mando-cellectia.vercel.app" target="_blank" class="btn primary small">
+                            <i class="fa-solid fa-terminal"></i> Probar Panel de Control
+                        </a>
+                        <a href="https://github.com/jorgesierra89/proyecto.cellectia" target="_blank" class="btn secondary small">
+                            <i class="fa-brands fa-github"></i> Código Fuente
+                        </a>
+                    </div>
+                    
+                    <p class="status-note"><em>* Proyecto implementado con flujos automáticos de seguridad y mantenimiento mediante GitHub Actions.</em></p>
                 </div>
             </div>
         </div>
@@ -74,9 +102,13 @@
 
     <footer id="contacto">
         <div class="container">
-            <h2>¿Hablamos?</h2>
-            <p>Estoy buscando mi próxima oportunidad como desarrollador Junior.</p>
-            <a href="mailto:tuemail@ejemplo.com" class="email-link">jorgesierra89@gmail.com</a>
+            <h2>¿Tienes un reto para mí?</h2>
+            <p>Busco mi primera oportunidad como Desarrollador Junior / IA Engineer.</p>
+            <div class="contact-info">
+                <a href="mailto:jorgesierra89@gmail.com" class="email-link">
+                    <i class="fa-solid fa-envelope"></i> jorgesierra89@gmail.com
+                </a>
+            </div>
         </div>
     </footer>
 
