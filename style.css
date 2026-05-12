@@ -11,44 +11,16 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-/* --- CONFIGURACIÓN DE BASE --- */
 body, html {
     font-family: 'Inter', sans-serif;
     background-color: var(--bg);
     color: var(--text);
     line-height: 1.6;
-}
-
-/* REGLAS PARA LA HOME (index.html) */
-/* Si NO tiene la clase de proyecto, se queda fijo */
-body:not(.project-details-page), 
-html:not(.project-details-page) {
     height: 100vh;
     overflow: hidden;
 }
 
-/* REGLAS PARA LA PÁGINA DE PROYECTO (cellectia.html) */
-/* Forzamos que todo fluya hacia abajo */
-body.project-details-page, 
-html.project-details-page {
-    height: auto !important; 
-    min-height: 100vh;
-    overflow-y: auto !important;
-    overflow-x: hidden;
-}
-
-/* IMPORTANTE: El app-container también debe liberar la altura */
-body.project-details-page .app-container {
-    height: auto !important;
-    min-height: 100vh;
-    display: block; /* Quitamos el flex para que el contenido baje natural */
-}
-
-.standalone-project { 
-    max-width: 900px; 
-    margin: 0 auto; 
-    padding: 3rem 1.5rem 8rem 1.5rem; /* Margen extra al final */
-}
+.app-container { display: flex; height: 100vh; width: 100vw; }
 
 /* SIDEBAR */
 .sidebar {
@@ -99,7 +71,7 @@ h2::after { content: ''; position: absolute; width: 40px; height: 3px; bottom: -
 .skills-grid { display: flex; flex-wrap: wrap; gap: 10px; }
 .tag { background: var(--card); padding: 0.5rem 0.8rem; border-radius: 6px; border: 1px solid var(--border); font-size: 0.85rem; display: flex; align-items: center; gap: 8px; }
 
-/* PROYECTOS (Grid de tarjetas) */
+/* PROYECTOS */
 .projects-grid { 
     display: grid; 
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
@@ -155,7 +127,7 @@ h2::after { content: ''; position: absolute; width: 40px; height: 3px; bottom: -
 .project-card-content h3 { font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--text); }
 .project-card-content p { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem; flex: 1; }
 
-/* Iconos centrados con texto en la tarjeta */
+/* MODIFICACIÓN: Iconos centrados con texto */
 .tech-icons { 
     display: flex; 
     justify-content: center; 
@@ -203,22 +175,16 @@ h2::after { content: ''; position: absolute; width: 40px; height: 3px; bottom: -
 .contact-card { background: var(--card); padding: 3rem; border-radius: 12px; border: 1px solid var(--border); text-align: center; max-width: 600px; margin: 2rem auto; }
 .contact-info-large { display: flex; justify-content: center; gap: 1rem; margin-top: 2rem; }
 
-/* PÁGINA ESPECÍFICA DE DETALLES (cellectia.html) */
-.standalone-project { 
-    max-width: 900px; 
-    margin: 0 auto; 
-    padding: 3rem 1.5rem 6rem 1.5rem; 
-}
-.back-btn { margin-bottom: 2rem; }
-.project-header-large h1 { font-size: 2.5rem; margin-bottom: 1rem; }
-.project-full-details h3 { color: var(--text); margin-bottom: 1rem; font-size: 1.4rem;}
-.project-full-details p { color: #cbd5e0; margin-bottom: 1.5rem; font-size: 1.05rem; }
+/* PÁGINA PROYECTO */
+.project-page { height: auto; overflow: auto; }
+.standalone-project { max-width: 800px; margin: 0 auto; padding: 4rem 2rem; }
+.back-btn { margin-bottom: 3rem; }
 
 /* MOBILE */
 @media (max-width: 800px) {
-    .app-container { flex-direction: column; height: auto; }
+    .app-container { flex-direction: column; overflow-y: auto; }
     body, html { height: auto; overflow: visible; }
-    .sidebar { width: 100%; padding: 1.5rem; height: auto; }
+    .sidebar { width: 100%; padding: 1.5rem; }
     .vertical-nav { flex-direction: row; flex-wrap: wrap; justify-content: center; }
     .content-area { padding: 2rem; }
     .about-grid-modern { grid-template-columns: 1fr; }
