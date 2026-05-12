@@ -20,14 +20,13 @@ body, html {
 }
 
 /* --- 2. REGLAS PARA LA HOME (index.html) --- */
-/* Estas reglas solo funcionan si el body NO tiene la clase del proyecto */
+/* Bloqueo de scroll solo si NO es la página de proyecto */
 body:not(.project-details-page), 
 html:not(.project-details-page) {
     height: 100vh;
     overflow: hidden;
 }
 
-/* El contenedor flex solo para la Home */
 body:not(.project-details-page) .app-container {
     display: flex;
     height: 100vh;
@@ -44,7 +43,7 @@ body.project-details-page {
 }
 
 body.project-details-page .app-container {
-    display: block !important; /* Quitamos el flex para que el texto baje */
+    display: block !important; 
     height: auto !important;
     width: 100%;
 }
@@ -55,7 +54,7 @@ body.project-details-page .app-container {
     padding: 3rem 1.5rem 8rem 1.5rem;
 }
 
-/* --- 4. COMPONENTES COMUNES --- */
+/* --- 4. COMPONENTES COMUNES (Mantenidos al 100%) --- */
 .sidebar {
     width: 280px;
     background-color: var(--bg-darker);
@@ -83,6 +82,7 @@ h1 { font-size: 1.35rem; line-height: 1.3; margin-bottom: 0.3rem;}
 .social-quick a { color: var(--text-muted); font-size: 1.3rem; transition: 0.3s; }
 .social-quick a:hover { color: var(--primary); transform: translateY(-3px); }
 
+/* CONTENT AREA HOME */
 .content-area { flex: 1; padding: 4rem; overflow-y: auto; background: var(--bg); }
 .tab-content { display: none; animation: fadeIn 0.4s ease; }
 .tab-content.active { display: block; }
@@ -92,6 +92,7 @@ h1 { font-size: 1.35rem; line-height: 1.3; margin-bottom: 0.3rem;}
 h2 { font-size: 2rem; margin-bottom: 2rem; position: relative; }
 h2::after { content: ''; position: absolute; width: 40px; height: 3px; bottom: -8px; left: 0; background: var(--primary); }
 
+/* SOBRE MI */
 .about-grid-modern { display: grid; grid-template-columns: 1.4fr 1fr; gap: 3rem; }
 .about-text p { margin-bottom: 1.2rem; color: #cbd5e0; }
 .soft-skills { display: flex; flex-direction: column; gap: 10px; margin-top: 1.5rem; font-size: 0.9rem; }
@@ -100,6 +101,7 @@ h2::after { content: ''; position: absolute; width: 40px; height: 3px; bottom: -
 .skills-grid { display: flex; flex-wrap: wrap; gap: 10px; }
 .tag { background: var(--card); padding: 0.5rem 0.8rem; border-radius: 6px; border: 1px solid var(--border); font-size: 0.85rem; display: flex; align-items: center; gap: 8px; }
 
+/* GRID DE PROYECTOS */
 .projects-grid { 
     display: grid; 
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
@@ -122,16 +124,19 @@ h2::after { content: ''; position: absolute; width: 40px; height: 3px; bottom: -
 .tech-tag { display: flex; align-items: center; gap: 6px; color: var(--text-muted); font-size: 0.8rem; font-weight: 500;}
 .tech-tag i { font-size: 1rem; color: var(--primary); }
 
+/* BOTONES */
 .btn { padding: 0.7rem 1.5rem; border-radius: 6px; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; transition: 0.3s; font-size: 0.9rem;}
 .primary { background: var(--primary); color: var(--bg); border: 2px solid var(--primary); }
 .secondary { border: 2px solid var(--border); color: var(--text); }
 .secondary:hover { border-color: var(--primary); color: var(--primary); }
 
+/* TIMELINE */
 .timeline { border-left: 2px solid var(--border); padding-left: 1.5rem; margin-top: 1rem; }
 .timeline-item { position: relative; margin-bottom: 2rem; }
 .timeline-item::before { content: ''; position: absolute; left: -25px; top: 5px; width: 12px; height: 12px; border-radius: 50%; background: var(--primary); border: 3px solid var(--bg); }
 .timeline-date { color: var(--primary); font-weight: 700; font-size: 0.85rem; }
 
+/* CONTACTO */
 .contact-card { background: var(--card); padding: 3rem; border-radius: 12px; border: 1px solid var(--border); text-align: center; max-width: 600px; margin: 2rem auto; }
 
 /* REGLAS ESPECÍFICAS DE CELLECTIA.HTML */
@@ -144,4 +149,5 @@ h2::after { content: ''; position: absolute; width: 40px; height: 3px; bottom: -
     body, html { height: auto !important; overflow: visible !important; }
     .sidebar { width: 100%; padding: 1.5rem; height: auto; }
     .vertical-nav { flex-direction: row; flex-wrap: wrap; justify-content: center; }
+    .content-area { padding: 2rem; }
 }
