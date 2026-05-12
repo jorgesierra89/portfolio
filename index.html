@@ -80,39 +80,26 @@
             <section id="proyectos" class="tab-content">
                 <h2>Proyectos</h2>
                 
-                <div class="projects-gallery">
-                    <div class="mini-card active" onclick="mostrarProyecto('cellectia', this)">
-                        <i class="fa-solid fa-robot"></i>
-                        <div>
-                            <span class="mini-title">Cellectia IA</span>
-                            <span class="mini-desc">Ecosistema RAG Educativo</span>
+                <div class="projects-grid">
+                    <a href="cellectia.html" class="project-card-link">
+                        <div class="project-card-thumb">
+                            <i class="fa-solid fa-network-wired thumb-placeholder"></i>
                         </div>
-                    </div>
-                </div>
-
-                <div id="visor-cellectia" class="project-viewer active">
-                    <div class="project-card featured">
-                        <div class="project-info">
-                            <div class="project-header">
-                                <h3>Cellectia - IA Educativa</h3>
-                                <span class="badge">Demo Funcional</span>
-                            </div>
-                            <p class="project-tagline">Arquitectura avanzada para consultas inteligentes sobre documentación técnica masiva.</p>
+                        
+                        <div class="project-card-content">
+                            <h3>Cellectia - IA Educativa</h3>
+                            <p>Arquitectura RAG avanzada para consultas inteligentes sobre documentación técnica masiva.</p>
                             
-                            <div class="project-features-minimal">
-                                <span><i class="fa-solid fa-bolt"></i> <strong>RAG:</strong> Contexto real.</span>
-                                <span><i class="fa-solid fa-server"></i> <strong>Cloud:</strong> Escalado GPU.</span>
-                                <span><i class="fa-solid fa-gears"></i> <strong>DevOps:</strong> API (FastAPI) y gestión.</span>
-                            </div>
-
-                            <div class="project-actions">
-                                <a href="https://demo-cellectia-demo-cellectia.hf.space/" target="_blank" class="btn primary small"><i class="fa-solid fa-robot"></i> Abrir IA</a>
-                                <a href="https://demo-cellectia.vercel.app/" target="_blank" class="btn secondary small"><i class="fa-solid fa-terminal"></i> Panel de Control</a>
-                                <a href="https://github.com/jorgesierra89/demo_cellectia" target="_blank" class="btn secondary small"><i class="fa-brands fa-github"></i> Código</a>
+                            <div class="tech-icons">
+                                <i class="fa-brands fa-python" title="Python"></i>
+                                <i class="fa-solid fa-robot" title="Hugging Face"></i>
+                                <i class="fa-solid fa-server" title="FastAPI"></i>
+                                <i class="fa-brands fa-docker" title="Docker"></i>
                             </div>
                         </div>
+                    </a>
+                    
                     </div>
-                </div>
             </section>
 
             <section id="curriculum" class="tab-content">
