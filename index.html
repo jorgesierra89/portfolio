@@ -3,111 +3,174 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jorge Sierra Martínez | Desarrollador de Software e IA</title>
+    <title>Jorge Sierra Martínez | IA & Cloud Developer</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav>
-        <div class="container">
-            <span class="logo">JS</span>
-            <ul>
-                <li><a href="#sobre-mi">Sobre mí</a></li>
-                <li><a href="#proyectos">Proyectos</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </div>
-    </nav>
 
-    <header class="hero">
-        <div class="container hero-flex">
-            <div class="hero-image">
-                <img src="mifoto.jpg" alt="Jorge Sierra Martínez" class="profile-img">
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="profile-section">
+                <img src="mifoto.jpg" alt="Jorge Sierra Martínez" class="profile-img-small">
+                <h1>Jorge <span class="highlight">Sierra</span></h1>
+                <p class="tagline">Desarrollador IA & Cloud</p>
             </div>
-            <div class="hero-content">
-                <h1>Hola, soy <span class="highlight">Jorge Sierra Martínez</span></h1>
-                <p class="subtitle">Desarrollador de Software enfocado en IA y Soluciones Cloud</p>
-                <p>Transformando la experiencia en el sector social en software escalable con impacto humano.</p>
-                <div class="cta-buttons">
-                    <a href="#proyectos" class="btn primary">Ver Proyectos</a>
-                    <a href="https://www.linkedin.com/in/jorge-sierra-mart%C3%ADnez-3b14b869/" target="_blank" class="btn secondary">
-                        <i class="fa-brands fa-linkedin"></i> LinkedIn
-                    </a>
-                </div>
-            </div>
-        </div>
-    </header>
 
-    <section id="sobre-mi" class="container">
-        <h2>Sobre mí</h2>
-        <div class="about-grid">
-            <div class="about-text">
-                <p>Tras 5 años en el sector social, decidí dar un giro a mi carrera hacia la tecnología. Mi enfoque combina la lógica técnica con la resolución de problemas complejos del mundo real.</p>
-                <p>Especializado en el desarrollo de <strong>Sistemas RAG</strong>, automatización de infraestructura y despliegue de modelos de lenguaje (LLMs).</p>
-            </div>
-            <div class="skills">
-                <span class="tag">Python</span>
-                <span class="tag">Node.js</span>
-                <span class="tag">Docker</span>
-                <span class="tag">FastAPI</span>
-                <span class="tag">GitHub Actions</span>
-                <span class="tag">Hugging Face</span>
-                <span class="tag">Vercel</span>
-            </div>
-        </div>
-    </section>
+            <nav class="vertical-nav">
+                <button class="nav-btn active" onclick="cambiarPestana('sobre-mi', this)">
+                    <i class="fa-regular fa-user"></i> Sobre mí
+                </button>
+                <button class="nav-btn" onclick="cambiarPestana('proyectos', this)">
+                    <i class="fa-solid fa-code"></i> Proyectos
+                </button>
+                <button class="nav-btn" onclick="cambiarPestana('curriculum', this)">
+                    <i class="fa-solid fa-file-lines"></i> Currículum
+                </button>
+                <button class="nav-btn" onclick="cambiarPestana('contacto', this)">
+                    <i class="fa-regular fa-envelope"></i> Contacto
+                </button>
+            </nav>
 
-    <section id="proyectos" class="bg-light">
-        <div class="container">
-            <h2>Proyectos Destacados</h2>
+            <div class="social-quick">
+                <a href="https://www.linkedin.com/in/jorge-sierra-mart%C3%ADnez-3b14b869/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/jorgesierra89" target="_blank"><i class="fa-brands fa-github"></i></a>
+            </div>
+        </aside>
+
+        <main class="content-area">
             
-            <div class="project-card featured">
-                <div class="project-info">
-                    <div class="project-header">
-                        <h3>Cellectia - Ecosistema de IA Educativa</h3>
-                        <span class="badge">Demo Funcional</span>
-                    </div>
-                    
-                    <p class="project-tagline">Arquitectura RAG para consultas inteligentes sobre documentación técnica masiva.</p>
-                    
-                    <div class="project-features-minimal">
-                        <span><i class="fa-solid fa-bolt"></i> <strong>RAG:</strong> Respuestas con contexto real.</span>
-                        <span><i class="fa-solid fa-server"></i> <strong>Cloud:</strong> Escalado dinámico CPU/GPU.</span>
-                        <span><i class="fa-solid fa-gears"></i> <strong>DevOps:</strong> Gestión de API y costes.</span>
-                    </div>
-
-                    <div class="project-actions">
-                        <a href="https://demo-cellectia-demo-cellectia.hf.space/" target="_blank" class="btn primary small">
-                            <i class="fa-solid fa-robot"></i> Abrir IA (Demo)
-                        </a>
+            <section id="sobre-mi" class="tab-content active">
+                <h2>Hola, soy <span class="highlight">Jorge</span></h2>
+                
+                <div class="about-grid-modern">
+                    <div class="about-text">
+                        <p>Soy una persona altamente motivada y adaptable. Tras 5 años de experiencia en el <strong>Trabajo Social</strong>, decidí transformar mi capacidad de resolución de problemas y empatía en software con impacto real.</p>
+                        <p>Recientemente titulado en Desarrollo Multiplataforma y especializándome en <strong>Inteligencia Artificial y Big Data</strong>, construyo soluciones que conectan la lógica técnica con las necesidades humanas.</p>
                         
-                        <a href="https://demo-cellectia.vercel.app/" target="_blank" class="btn secondary small">
-                            <i class="fa-solid fa-terminal"></i> Panel de Control
-                        </a>
-                        
-                        <a href="https://github.com/jorgesierra89/demo_cellectia" target="_blank" class="btn secondary small">
-                            <i class="fa-brands fa-github"></i> Código Fuente
-                        </a>
+                        <div class="soft-skills">
+                            <span><i class="fa-solid fa-check"></i> Resolución de problemas</span>
+                            <span><i class="fa-solid fa-check"></i> Orientación al usuario</span>
+                            <span><i class="fa-solid fa-check"></i> Pensamiento analítico</span>
+                        </div>
                     </div>
                     
-                    <p class="status-note-minimal"><em>* Ecosistema integrado con GitHub Actions y Cron-job API.</em></p>
+                    <div class="tech-stack-container">
+                        <h3>Stack Tecnológico</h3>
+                        <div class="skills-grid">
+                            <span class="tag"><i class="fa-brands fa-python"></i> Python</span>
+                            <span class="tag"><i class="fa-brands fa-java"></i> Java / Kotlin</span>
+                            <span class="tag"><i class="fa-brands fa-node-js"></i> Node.js</span>
+                            <span class="tag"><i class="fa-brands fa-docker"></i> Docker</span>
+                            <span class="tag"><i class="fa-brands fa-aws"></i> AWS</span>
+                            <span class="tag"><i class="fa-solid fa-database"></i> MySQL</span>
+                            <span class="tag"><i class="fa-solid fa-robot"></i> Hugging Face</span>
+                            <span class="tag"><i class="fa-solid fa-v"></i> Vercel</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </section>
+            </section>
 
-    <footer id="contacto">
-        <div class="container">
-            <h2>¿Tienes un reto para mí?</h2>
-            <p>Busco mi primera oportunidad como Desarrollador Junior / IA Engineer.</p>
-            <div class="contact-info">
-                <a href="mailto:jorgesierra89@gmail.com" class="email-link">
-                    <i class="fa-solid fa-envelope"></i> jorgesierra89@gmail.com
-                </a>
-            </div>
-        </div>
-    </footer>
+            <section id="proyectos" class="tab-content">
+                <h2>Proyectos Destacados</h2>
+                
+                <div class="projects-gallery">
+                    <div class="mini-card active" onclick="mostrarProyecto('cellectia', this)">
+                        <i class="fa-solid fa-robot"></i>
+                        <span>Cellectia IA</span>
+                    </div>
+                    <div class="mini-card" onclick="mostrarProyecto('qa-automation', this)">
+                        <i class="fa-solid fa-vial-circle-check"></i>
+                        <span>QA Automation</span>
+                    </div>
+                </div>
+
+                <div id="visor-cellectia" class="project-card featured project-viewer active">
+                    <div class="project-info">
+                        <div class="project-header">
+                            <h3>Cellectia - Ecosistema de IA Educativa</h3>
+                            <span class="badge">Demo Funcional</span>
+                        </div>
+                        <p class="project-tagline">Arquitectura RAG para consultas inteligentes sobre documentación técnica masiva.</p>
+                        
+                        <div class="project-features-minimal">
+                            <span><i class="fa-solid fa-bolt"></i> <strong>RAG:</strong> Respuestas con contexto real.</span>
+                            <span><i class="fa-solid fa-server"></i> <strong>Cloud:</strong> Escalado dinámico CPU/GPU.</span>
+                            <span><i class="fa-solid fa-gears"></i> <strong>DevOps:</strong> Gestión de API y costes.</span>
+                        </div>
+
+                        <div class="project-actions">
+                            <a href="https://demo-cellectia-demo-cellectia.hf.space/" target="_blank" class="btn primary small"><i class="fa-solid fa-robot"></i> Abrir IA (Demo)</a>
+                            <a href="https://demo-cellectia.vercel.app/" target="_blank" class="btn secondary small"><i class="fa-solid fa-terminal"></i> Panel de Control</a>
+                            <a href="https://github.com/jorgesierra89/demo_cellectia" target="_blank" class="btn secondary small"><i class="fa-brands fa-github"></i> Código Fuente</a>
+                        </div>
+                        <p class="status-note-minimal"><em>* Ecosistema integrado con GitHub Actions y Cron-job API.</em></p>
+                    </div>
+                </div>
+
+                <div id="visor-qa-automation" class="project-card featured project-viewer" style="display: none;">
+                    <div class="project-info">
+                        <div class="project-header">
+                            <h3>Automatización de Pruebas (Genasys)</h3>
+                            <span class="badge">Prácticas QA</span>
+                        </div>
+                        <p class="project-tagline">Implementación de flujos de prueba automatizados para asegurar la calidad del software.</p>
+                        <div class="project-features-minimal">
+                            <span><i class="fa-solid fa-code"></i> <strong>Gherkin / Cypress</strong></span>
+                            <span><i class="fa-solid fa-mobile-screen"></i> <strong>Detox</strong></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="curriculum" class="tab-content">
+                <h2>Trayectoria</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">2026</div>
+                        <div class="timeline-content">
+                            <h3>Especialización Inteligencia Artificial y Big Data</h3>
+                            <p>IES Leonardo da Vinci, Albacete.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2025</div>
+                        <div class="timeline-content">
+                            <h3>Técnico Superior en Desarrollo de Aplicaciones Multiplataforma</h3>
+                            <p>QA Tester en Genasys Protect (Automatización con Cypress y Detox).</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2018 - 2023</div>
+                        <div class="timeline-content">
+                            <h3>Trabajador Social</h3>
+                            <p>ASOCIDE CV. Gestión, empatía y resolución de problemas de usuarios.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2014</div>
+                        <div class="timeline-content">
+                            <h3>Diplomado en Trabajo Social</h3>
+                            <p>Universidad de Castilla-La Mancha. (Máster posterior en Proyectos Sociales y Dependencia).</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contacto" class="tab-content">
+                <div class="contact-card">
+                    <h2>¿Tienes un reto para mí?</h2>
+                    <p>Busco mi primera oportunidad profesional como Desarrollador Junior / IA Engineer. Si crees que mi perfil técnico y mi background social pueden aportar valor a tu equipo, hablemos.</p>
+                    <div class="contact-info-large">
+                        <a href="mailto:jorgesierra89@gmail.com" class="btn primary"><i class="fa-solid fa-envelope"></i> jorgesierra89@gmail.com</a>
+                        <a href="tel:+34639959178" class="btn secondary"><i class="fa-solid fa-phone"></i> 639 959 178</a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
 
     <script src="script.js"></script>
 </body>
