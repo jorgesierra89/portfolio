@@ -11,18 +11,51 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+/* --- 1. BASE PARA TODO EL SITIO --- */
 body, html {
     font-family: 'Inter', sans-serif;
     background-color: var(--bg);
     color: var(--text);
     line-height: 1.6;
+}
+
+/* --- 2. REGLAS PARA LA HOME (index.html) --- */
+/* Estas reglas solo funcionan si el body NO tiene la clase del proyecto */
+body:not(.project-details-page), 
+html:not(.project-details-page) {
     height: 100vh;
     overflow: hidden;
 }
 
-.app-container { display: flex; height: 100vh; width: 100vw; }
+/* El contenedor flex solo para la Home */
+body:not(.project-details-page) .app-container {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
 
-/* SIDEBAR */
+/* --- 3. REGLAS PARA PÁGINAS DE PROYECTO (cellectia.html) --- */
+/* Aquí liberamos el scroll totalmente */
+body.project-details-page {
+    height: auto !important;
+    min-height: 100vh;
+    overflow-y: auto !important;
+    overflow-x: hidden;
+}
+
+body.project-details-page .app-container {
+    display: block !important; /* Quitamos el flex para que el texto baje */
+    height: auto !important;
+    width: 100%;
+}
+
+.standalone-project {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 8rem 1.5rem;
+}
+
+/* --- 4. COMPONENTES COMUNES --- */
 .sidebar {
     width: 280px;
     background-color: var(--bg-darker);
@@ -34,9 +67,7 @@ body, html {
 
 .profile-section { text-align: center; margin-bottom: 3rem; }
 .profile-img-small { width: 110px; height: 110px; border-radius: 50%; border: 3px solid var(--primary); object-fit: cover; margin-bottom: 1rem; }
-
 h1 { font-size: 1.35rem; line-height: 1.3; margin-bottom: 0.3rem;} 
-
 .tagline { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.4rem; }
 
 .vertical-nav { display: flex; flex-direction: column; gap: 0.5rem; flex: 1; }
@@ -52,7 +83,6 @@ h1 { font-size: 1.35rem; line-height: 1.3; margin-bottom: 0.3rem;}
 .social-quick a { color: var(--text-muted); font-size: 1.3rem; transition: 0.3s; }
 .social-quick a:hover { color: var(--primary); transform: translateY(-3px); }
 
-/* CONTENT AREA */
 .content-area { flex: 1; padding: 4rem; overflow-y: auto; background: var(--bg); }
 .tab-content { display: none; animation: fadeIn 0.4s ease; }
 .tab-content.active { display: block; }
@@ -62,7 +92,6 @@ h1 { font-size: 1.35rem; line-height: 1.3; margin-bottom: 0.3rem;}
 h2 { font-size: 2rem; margin-bottom: 2rem; position: relative; }
 h2::after { content: ''; position: absolute; width: 40px; height: 3px; bottom: -8px; left: 0; background: var(--primary); }
 
-/* SOBRE MI */
 .about-grid-modern { display: grid; grid-template-columns: 1.4fr 1fr; gap: 3rem; }
 .about-text p { margin-bottom: 1.2rem; color: #cbd5e0; }
 .soft-skills { display: flex; flex-direction: column; gap: 10px; margin-top: 1.5rem; font-size: 0.9rem; }
@@ -71,7 +100,6 @@ h2::after { content: ''; position: absolute; width: 40px; height: 3px; bottom: -
 .skills-grid { display: flex; flex-wrap: wrap; gap: 10px; }
 .tag { background: var(--card); padding: 0.5rem 0.8rem; border-radius: 6px; border: 1px solid var(--border); font-size: 0.85rem; display: flex; align-items: center; gap: 8px; }
 
-/* PROYECTOS */
 .projects-grid { 
     display: grid; 
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
@@ -79,113 +107,41 @@ h2::after { content: ''; position: absolute; width: 40px; height: 3px; bottom: -
 }
 
 .project-card-link { 
-    text-decoration: none; 
-    color: inherit; 
-    background: var(--card); 
-    border: 1px solid var(--border); 
-    border-radius: 12px; 
-    overflow: hidden; 
-    display: flex; 
-    flex-direction: column; 
-    transition: all 0.3s ease; 
+    text-decoration: none; color: inherit; background: var(--card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; transition: all 0.3s ease; 
 }
+.project-card-link:hover { transform: translateY(-5px); border-color: var(--primary); }
 
-.project-card-link:hover { 
-    transform: translateY(-5px); 
-    border-color: var(--primary); 
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3); 
-}
+.project-card-thumb { height: 180px; background: #141e30; display: flex; align-items: center; justify-content: center; overflow: hidden; border-bottom: 1px solid var(--border); padding: 10px;}
+.thumb-img { width: 100%; height: 100%; object-fit: contain; opacity: 0.9; transition: 0.3s; }
 
-.project-card-thumb { 
-    height: 180px; 
-    background: #141e30; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    overflow: hidden; 
-    border-bottom: 1px solid var(--border);
-    padding: 10px;
-}
-
-.thumb-img { 
-    width: 100%; 
-    height: 100%; 
-    object-fit: contain; 
-    opacity: 0.9; 
-    transition: 0.3s; 
-}
-
-.project-card-link:hover .thumb-img { opacity: 1; transform: scale(1.03); }
-
-.project-card-content { 
-    padding: 1.5rem; 
-    display: flex; 
-    flex-direction: column; 
-    flex: 1; 
-}
-
+.project-card-content { padding: 1.5rem; display: flex; flex-direction: column; flex: 1; }
 .project-card-content h3 { font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--text); }
 .project-card-content p { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem; flex: 1; }
 
-/* MODIFICACIÓN: Iconos centrados con texto */
-.tech-icons { 
-    display: flex; 
-    justify-content: center; 
-    align-items: center;
-    gap: 15px; 
-    flex-wrap: wrap; 
-    border-top: 1px solid var(--border); 
-    padding-top: 1.2rem; 
-}
+.tech-icons { display: flex; justify-content: center; align-items: center; gap: 15px; flex-wrap: wrap; border-top: 1px solid var(--border); padding-top: 1.2rem; }
+.tech-tag { display: flex; align-items: center; gap: 6px; color: var(--text-muted); font-size: 0.8rem; font-weight: 500;}
+.tech-tag i { font-size: 1rem; color: var(--primary); }
 
-.tech-tag {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    color: var(--text-muted);
-    font-size: 0.8rem;
-    font-weight: 500;
-}
-
-.tech-tag i {
-    font-size: 1rem;
-    color: var(--primary);
-}
-
-.project-card-link:hover .tech-tag {
-    color: var(--text);
-}
-
-/* BOTONES */
-.btn { padding: 0.7rem 1.5rem; border-radius: 6px; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; transition: 0.3s; cursor: pointer; font-size: 0.9rem;}
+.btn { padding: 0.7rem 1.5rem; border-radius: 6px; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; transition: 0.3s; font-size: 0.9rem;}
 .primary { background: var(--primary); color: var(--bg); border: 2px solid var(--primary); }
-.primary:hover { background: transparent; color: var(--primary); }
 .secondary { border: 2px solid var(--border); color: var(--text); }
 .secondary:hover { border-color: var(--primary); color: var(--primary); }
 
-/* TIMELINE */
 .timeline { border-left: 2px solid var(--border); padding-left: 1.5rem; margin-top: 1rem; }
 .timeline-item { position: relative; margin-bottom: 2rem; }
 .timeline-item::before { content: ''; position: absolute; left: -25px; top: 5px; width: 12px; height: 12px; border-radius: 50%; background: var(--primary); border: 3px solid var(--bg); }
 .timeline-date { color: var(--primary); font-weight: 700; font-size: 0.85rem; }
-.timeline-content h3 { font-size: 1.1rem; }
-.timeline-content p { color: var(--text-muted); font-size: 0.9rem; }
 
-/* CONTACTO */
 .contact-card { background: var(--card); padding: 3rem; border-radius: 12px; border: 1px solid var(--border); text-align: center; max-width: 600px; margin: 2rem auto; }
-.contact-info-large { display: flex; justify-content: center; gap: 1rem; margin-top: 2rem; }
 
-/* PÁGINA PROYECTO */
-.project-page { height: auto; overflow: auto; }
-.standalone-project { max-width: 800px; margin: 0 auto; padding: 4rem 2rem; }
-.back-btn { margin-bottom: 3rem; }
+/* REGLAS ESPECÍFICAS DE CELLECTIA.HTML */
+.project-header-large h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+.project-full-details h3 { color: var(--text); margin-top: 2rem; margin-bottom: 1rem; font-size: 1.4rem;}
 
-/* MOBILE */
+/* --- 5. MOBILE --- */
 @media (max-width: 800px) {
-    .app-container { flex-direction: column; overflow-y: auto; }
-    body, html { height: auto; overflow: visible; }
-    .sidebar { width: 100%; padding: 1.5rem; }
+    .app-container { flex-direction: column !important; height: auto !important; }
+    body, html { height: auto !important; overflow: visible !important; }
+    .sidebar { width: 100%; padding: 1.5rem; height: auto; }
     .vertical-nav { flex-direction: row; flex-wrap: wrap; justify-content: center; }
-    .content-area { padding: 2rem; }
-    .about-grid-modern { grid-template-columns: 1fr; }
 }
