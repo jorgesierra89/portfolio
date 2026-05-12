@@ -11,8 +11,8 @@
 <body class="project-page">
 
     <div class="container standalone-project">
-        <a href="index.html" class="btn secondary small back-btn">
-            <i class="fa-solid fa-arrow-left"></i> Volver al Portfolio
+        <a href="index.html#proyectos" class="btn secondary small back-btn">
+            <i class="fa-solid fa-arrow-left"></i> Volver a Proyectos
         </a>
 
         <div class="project-header-large">
@@ -25,15 +25,22 @@
                 Arquitectura avanzada para consultas inteligentes sobre documentación técnica masiva, utilizando recuperación de información vectorizada.
             </p>
 
+            <div class="info-box" style="background: rgba(56, 189, 248, 0.1); border-left: 4px solid var(--primary); padding: 1.5rem; margin-bottom: 2rem; border-radius: 4px;">
+                <p style="margin-bottom: 0;"><strong>⚠️ Nota sobre la Demo:</strong> Esta versión pública utiliza un modelo optimizado para balancear coste y rendimiento. A diferencia de la versión completa, esta demo está diseñada para mostrar la capacidad de la arquitectura RAG sin incurrir en costes de computación GPU masiva constante.</p>
+            </div>
+
             <h3><i class="fa-solid fa-crosshairs"></i> El Reto</h3>
-            <p>En entornos educativos y técnicos, localizar información específica dentro de manuales extensos es ineficiente. Los LLMs tradicionales tienden a alucinar si no se les proporciona el contexto exacto. El objetivo era crear un ecosistema capaz de leer, comprender y responder basándose <strong>únicamente</strong> en la documentación proporcionada.</p>
+            <p>En entornos educativos y técnicos, localizar información específica dentro de manuales extensos es ineficiente. El objetivo era crear un ecosistema capaz de responder basándose <strong>únicamente</strong> en la documentación proporcionada.</p>
 
             <h3 style="margin-top: 2rem;"><i class="fa-solid fa-microchip"></i> Solución Técnica</h3>
             <div class="project-features-minimal" style="margin-top: 1rem;">
                 <span><i class="fa-solid fa-bolt"></i> <strong>RAG:</strong> Generación aumentada por recuperación para contexto real.</span>
                 <span><i class="fa-solid fa-server"></i> <strong>Cloud:</strong> Dockerizado en Hugging Face con escalado GPU.</span>
-                <span><i class="fa-solid fa-gears"></i> <strong>DevOps:</strong> API Node.js/FastAPI en Vercel para control de costes.</span>
+                <span><i class="fa-solid fa-gears"></i> <strong>DevOps:</strong> API (FastAPI) en Vercel para control de costes.</span>
             </div>
+
+            <h3 style="margin-top: 2rem;"><i class="fa-solid fa-terminal"></i> Optimización de Recursos (Panel de Control)</h3>
+            <p>Para garantizar la sostenibilidad del proyecto, he desarrollado un <strong>Panel de Control</strong> dedicado. Este permite gestionar el estado de la máquina en Hugging Face (HF), permitiendo arrancar o pausar la instancia GPU según la demanda. Esto optimiza el consumo de recursos y evita costes innecesarios cuando el sistema no está en uso activo.</p>
 
             <div class="project-actions large-actions" style="margin-top: 3rem; display: flex; gap: 1rem; flex-wrap: wrap;">
                 <a href="https://demo-cellectia-demo-cellectia.hf.space/" target="_blank" class="btn primary">
