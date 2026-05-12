@@ -11,7 +11,7 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-/* --- CONFIGURACIÓN DE BASE Y SCROLL CONDICIONAL --- */
+/* --- CONFIGURACIÓN DE BASE --- */
 body, html {
     font-family: 'Inter', sans-serif;
     background-color: var(--bg);
@@ -19,22 +19,36 @@ body, html {
     line-height: 1.6;
 }
 
-/* Reglas para la HOME (index.html) - Se mantiene fija */
+/* REGLAS PARA LA HOME (index.html) */
+/* Si NO tiene la clase de proyecto, se queda fijo */
 body:not(.project-details-page), 
 html:not(.project-details-page) {
     height: 100vh;
     overflow: hidden;
 }
 
-/* Reglas para la PÁGINA DE PROYECTO (cellectia.html) - Permite scroll */
-body.project-details-page {
-    height: auto;
+/* REGLAS PARA LA PÁGINA DE PROYECTO (cellectia.html) */
+/* Forzamos que todo fluya hacia abajo */
+body.project-details-page, 
+html.project-details-page {
+    height: auto !important; 
     min-height: 100vh;
-    overflow-y: auto;
+    overflow-y: auto !important;
     overflow-x: hidden;
 }
 
-.app-container { display: flex; height: 100vh; width: 100vw; }
+/* IMPORTANTE: El app-container también debe liberar la altura */
+body.project-details-page .app-container {
+    height: auto !important;
+    min-height: 100vh;
+    display: block; /* Quitamos el flex para que el contenido baje natural */
+}
+
+.standalone-project { 
+    max-width: 900px; 
+    margin: 0 auto; 
+    padding: 3rem 1.5rem 8rem 1.5rem; /* Margen extra al final */
+}
 
 /* SIDEBAR */
 .sidebar {
