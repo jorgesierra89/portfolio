@@ -1,18 +1,33 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Efecto de aparición suave de las secciones al hacer scroll
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, { threshold: 0.1 });
+// Función para cambiar las pestañas principales (Sobre mí, Proyectos, etc.)
+function cambiarPestana(idPestana, boton) {
+    // 1. Ocultar todas las pestañas
+    const pestanas = document.querySelectorAll('.tab-content');
+    pestanas.forEach(p => p.classList.remove('active'));
 
-    document.querySelectorAll('section').forEach(section => {
-        section.style.opacity = '0';
-        section.style.transform = 'translateY(20px)';
-        section.style.transition = 'all 0.6s ease-out';
-        observer.observe(section);
-    });
-});
+    // 2. Mostrar la seleccionada
+    document.getElementById(idPestana).classList.add('active');
+
+    // 3. Quitar clase 'active' de todos los botones del menú lateral
+    const botonesNav = document.querySelectorAll('.nav-btn');
+    botonesNav.forEach(b => b.classList.remove('active'));
+
+    // 4. Poner 'active' al botón pulsado
+    boton.classList.add('active');
+}
+
+// Función para cambiar de proyecto dentro de la pestaña Proyectos
+function mostrarProyecto(idProyecto, miniCard) {
+    // 1. Ocultar todos los visores de proyecto
+    const visores = document.querySelectorAll('.project-viewer');
+    visores.forEach(v => v.style.display = 'none');
+
+    // 2. Mostrar el proyecto seleccionado
+    document.getElementById('visor-' + idProyecto).style.display = 'block';
+
+    // 3. Quitar clase 'active' de todas las miniaturas
+    const miniCards = document.querySelectorAll('.mini-card');
+    miniCards.forEach(c => c.classList.remove('active'));
+
+    // 4. Activar la miniatura pulsada
+    miniCard.classList.add('active');
+}
