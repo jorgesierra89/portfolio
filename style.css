@@ -34,24 +34,26 @@ body:not(.project-details-page) .app-container {
 }
 
 /* --- 3. REGLAS PARA PÁGINAS DE PROYECTO (cellectia.html) --- */
-/* Aquí liberamos el scroll totalmente */
 body.project-details-page {
     height: auto !important;
-    min-height: 100vh;
-    overflow-y: auto !important;
+    min-height: 100vh !important;
+    overflow-y: auto !important; /* Fuerza el scroll vertical */
     overflow-x: hidden;
+    position: relative; /* Ayuda al ratón a situarse */
 }
 
 body.project-details-page .app-container {
-    display: block !important; 
+    display: block !important; /* CAMBIO CLAVE: De flex a block para soltar el scroll */
     height: auto !important;
-    width: 100%;
+    min-height: 100vh;
 }
 
+/* Esta es la clase que usas en cellectia.html para envolver el texto */
 .standalone-project {
     max-width: 900px;
     margin: 0 auto;
-    padding: 3rem 1.5rem 8rem 1.5rem;
+    padding: 3rem 1.5rem 10rem 1.5rem;
+    position: relative;
 }
 
 /* --- 4. COMPONENTES COMUNES (Mantenidos al 100%) --- */
