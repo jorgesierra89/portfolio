@@ -26,3 +26,14 @@ function mostrarProyecto(idProyecto, miniCard) {
     miniCards.forEach(c => c.classList.remove('active'));
     miniCard.classList.add('active');
 }
+
+// Al cargar la página, comprueba si venimos de un enlace con #proyectos
+window.addEventListener('DOMContentLoaded', () => {
+    if (window.location.hash === '#proyectos') {
+        // Buscamos el botón de la barra lateral que abre proyectos
+        const btnProyectos = document.querySelector('button[onclick*="proyectos"]');
+        if (btnProyectos) {
+            cambiarPestana('proyectos', btnProyectos);
+        }
+    }
+});
