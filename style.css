@@ -94,13 +94,40 @@ h2 { font-size: 2rem; margin-bottom: 2rem; position: relative; }
 h2::after { content: ''; position: absolute; width: 40px; height: 3px; bottom: -8px; left: 0; background: var(--primary); }
 
 /* SOBRE MI */
-.about-grid-modern { display: grid; grid-template-columns: 1.4fr 1fr; gap: 3rem; }
-.about-text p { margin-bottom: 1.2rem; color: #cbd5e0; }
-.soft-skills { display: flex; flex-direction: column; gap: 10px; margin-top: 1.5rem; font-size: 0.9rem; }
-.soft-skills span i { color: var(--primary); margin-right: 8px; }
+/* SOBRE MI - Ahora en una sola columna */
+.about-grid-modern { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 3rem; 
+}
 
-.skills-grid { display: flex; flex-wrap: wrap; gap: 10px; }
-.tag { background: var(--card); padding: 0.5rem 0.8rem; border-radius: 6px; border: 1px solid var(--border); font-size: 0.85rem; display: flex; align-items: center; gap: 8px; }
+/* EL STACK TECNOLÓGICO - Convertido en un panel horizontal */
+.tech-stack-container {
+    width: 100%;
+    margin-top: 1rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--border); /* Una línea sutil para separarlo del texto */
+}
+
+/* Esta es la cuadrícula mágica que pondrá las categorías lado a lado */
+.tech-stack-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2.5rem;
+}
+
+.tech-category {
+    margin-bottom: 0; /* Ya no necesitamos margen abajo porque usamos el gap del grid */
+}
+
+.category-title {
+    font-size: 0.85rem;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
 
 /* GRID DE PROYECTOS */
 .projects-grid { 
