@@ -18,60 +18,62 @@
                 <i class="fa-solid fa-arrow-left"></i> Volver a Proyectos
             </a>
 
-            <div class="project-header-large">
-                <h1>Sancho AI Assistant <span style="font-size: 1rem; background: var(--primary); color: var(--bg); padding: 4px 10px; border-radius: 6px; margin-left: 12px; vertical-align: middle; font-weight: 700;">MVP / Hackathon</span></h1>
-                <p class="tagline" style="font-size: 1.1rem; color: var(--primary);">Automatización Inteligente On-Premise para Odoo ERP</p>
+            <div class="project-header-large" style="margin-bottom: 2.5rem;">
+                <h1>Sancho AI Assistant</h1>
+                <span style="font-size: 0.9rem; background: var(--primary); color: var(--bg); padding: 4px 10px; border-radius: 6px; font-weight: 700;">MVP / Hackathon</span>
+                
+                <div class="project-actions" style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="URL_DE_TU_REPOSITORIO_AQUI" target="_blank" class="btn primary">
+                        <i class="fa-brands fa-github"></i> Ver Código en GitHub
+                    </a>
+                    </div>
             </div>
 
             <div class="project-full-details">
+                <p class="project-tagline" style="font-size: 1.2rem; margin-bottom: 2rem; color: var(--primary); font-weight: 600;">
+                    Automatización Inteligente On-Premise para Odoo ERP.
+                </p>
                 
                 <div style="background: var(--bg-darker); padding: 2rem; border-radius: 12px; border: 1px solid var(--border); margin: 2rem 0;">
                     <h3>El Reto</h3>
                     <p style="color: var(--text-muted); margin-bottom: 1rem;">
-                        Muchas empresas evitan el uso de IAs generativas por el riesgo que supone enviar datos sensibles de clientes y facturación a servidores externos. El reto era crear una solución que permitiera disfrutar de la potencia de los LLMs sin que <strong>ningún dato saliera de la infraestructura local de la empresa</strong>.
+                        Muchas empresas evitan el uso de IAs generativas por el riesgo que supone enviar datos sensibles a servidores externos. El reto era crear una solución que permitiera disfrutar de la potencia de los LLMs sin que <strong>ningún dato saliera de la infraestructura local</strong>.
                     </p>
                     <h3>La Solución</h3>
                     <p style="color: var(--text-muted);">
-                        Desarrollamos un plugin nativo para <strong>Odoo</strong> que actúa como puente con un servidor de inferencia privado. El sistema procesa peticiones en lenguaje natural para automatizar flujos de trabajo, como la creación de presupuestos, garantizando el cumplimiento estricto del RGPD.
+                        Desarrollamos un plugin nativo para <strong>Odoo</strong> que actúa como puente con un servidor de inferencia privado, procesando peticiones en lenguaje natural para automatizar flujos de trabajo como la creación de presupuestos.
                     </p>
                 </div>
 
                 <h3>Arquitectura y Funcionamiento</h3>
-                <p>El proyecto se diseñó para ser modular y seguro, centrando toda la interacción dentro del ecosistema Odoo:</p>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem;">El proyecto se diseñó para ser modular y seguro, centrando toda la interacción dentro del ecosistema Odoo:</p>
                 <ul style="color: var(--text-muted); padding-left: 1.5rem; margin-bottom: 2rem; line-height: 1.8;">
-                    <li><strong>Interfaz Odoo:</strong> El usuario interactúa directamente desde un módulo personalizado en el panel de Odoo, enviando instrucciones simples por texto.</li>
-                    <li><strong>Procesamiento Local:</strong> La petición se envía a un servidor local donde un modelo de lenguaje extrae las entidades (productos, cantidades, clientes) y genera una respuesta estructurada en formato JSON.</li>
-                    <li><strong>Acción sobre el ERP:</strong> El sistema interpreta los datos recibidos, valida el stock y los precios en la base de datos de Odoo y genera automáticamente el documento correspondiente.</li>
+                    <li><strong>Interfaz Odoo:</strong> Módulo personalizado para enviar instrucciones por texto.</li>
+                    <li><strong>Procesamiento Local:</strong> Servidor de IA que extrae entidades y genera JSON estructurado.</li>
+                    <li><strong>Acción sobre el ERP:</strong> Validación automática de stock/precios y generación de documentos.</li>
                 </ul>
 
                 <h3 style="margin-top: 3rem;">Puntos Fuertes del Proyecto</h3>
                 <div class="about-grid-modern" style="gap: 1.5rem; margin-bottom: 3rem;">
                     <div style="background: var(--card); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border);">
                         <h4 style="color: var(--primary); margin-bottom: 0.5rem;"><i class="fa-solid fa-user-shield"></i> Privacidad Absoluta</h4>
-                        <p style="font-size: 0.9rem; color: var(--text-muted);">Al utilizar modelos On-Premise, la información confidencial nunca abandona el servidor de la empresa, eliminando riesgos de seguridad y filtraciones.</p>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Modelos On-Premise: la información confidencial nunca abandona el servidor de la empresa.</p>
                     </div>
                     <div style="background: var(--card); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border);">
-                        <h4 style="color: var(--primary); margin-bottom: 0.5rem;"><i class="fa-solid fa-gears"></i> Optimización de Procesos</h4>
-                        <p style="font-size: 0.9rem; color: var(--text-muted);">Reduce el tiempo de creación de documentos administrativos, permitiendo que perfiles no técnicos gestionen tareas complejas mediante lenguaje natural.</p>
+                        <h4 style="color: var(--primary); margin-bottom: 0.5rem;"><i class="fa-solid fa-gears"></i> Optimización</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Gestión de tareas complejas mediante lenguaje natural para perfiles no técnicos.</p>
                     </div>
                 </div>
 
-                <h3>Stack Tecnológico</h3>
+                <h3 style="margin-top: 3rem; border-top: 1px solid var(--border); padding-top: 2rem;">Stack Tecnológico</h3>
                 <div class="tech-stack-container" style="margin-top: 0; padding-top: 1rem; border: none;">
                     <div class="skills-grid" style="gap: 15px;">
                         <span class="tag" style="font-size: 1rem;"><i class="fa-brands fa-python"></i> Python</span>
-                        <span class="tag" style="font-size: 1rem;"><i class="fa-solid fa-briefcase"></i> Odoo Plugin Development</span>
-                        <span class="tag" style="font-size: 1rem;"><i class="fa-solid fa-robot"></i> Local LLMs / IA</span>
+                        <span class="tag" style="font-size: 1rem;"><i class="fa-solid fa-briefcase"></i> Odoo Plugin</span>
+                        <span class="tag" style="font-size: 1rem;"><i class="fa-solid fa-robot"></i> Local LLMs</span>
                         <span class="tag" style="font-size: 1rem;"><i class="fa-solid fa-code"></i> JSON API</span>
                         <span class="tag" style="font-size: 1rem;"><i class="fa-solid fa-database"></i> PostgreSQL</span>
                     </div>
-                </div>
-
-                <div style="text-align: center; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border);">
-                    <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Explora el código del módulo y la lógica de integración:</p>
-                    <a href="URL_DE_TU_REPOSITORIO_AQUI" target="_blank" class="btn primary">
-                        <i class="fa-brands fa-github"></i> Ver Código en GitHub
-                    </a>
                 </div>
 
             </div>
