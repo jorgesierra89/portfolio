@@ -20,9 +20,8 @@ body, html {
 }
 
 /* --- 2. REGLAS PARA LA HOME (index.html) --- */
-/* Bloqueo de scroll solo si NO es la página de proyecto */
-body:not(.project-details-page), 
-html:not(.project-details-page) {
+/* Bloqueo de scroll solo en el body de la Home */
+body:not(.project-details-page) {
     height: 100vh;
     overflow: hidden;
 }
