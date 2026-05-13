@@ -94,7 +94,6 @@ h2 { font-size: 2rem; margin-bottom: 2rem; position: relative; }
 h2::after { content: ''; position: absolute; width: 40px; height: 3px; bottom: -8px; left: 0; background: var(--primary); }
 
 /* SOBRE MI */
-/* SOBRE MI - Ahora en una sola columna */
 .about-grid-modern { 
     display: flex; 
     flex-direction: column; 
