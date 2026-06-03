@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asesor IA Local | Jorge Sierra Martínez</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="project-details-page">
+
+    <div class="app-container">
+        
+        <div class="standalone-project">
+            
+            <a href="index.html#proyectos" class="btn secondary" style="margin-bottom: 2rem;">
+                <i class="fa-solid fa-arrow-left"></i> Volver a Proyectos
+            </a>
+
+            <div class="project-header-large" style="margin-bottom: 2.5rem;">
+                <h1>Asesor Inteligente de IA Local</h1>
+                <span style="font-size: 0.9rem; background: var(--primary); color: var(--bg); padding: 4px 10px; border-radius: 6px; font-weight: 700;">Fullstack / IA Integrada</span>
+                
+                <div class="project-actions" style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="https://github.com/jorgesierra89/asesor_ia_local" target="_blank" class="btn primary">
+                        <i class="fa-brands fa-github"></i> Ver Código
+                    </a>
+                    <a href="https://jorgesierra89-asesor-ia-local.hf.space/" target="_blank" class="btn secondary">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Ver Demo en Vivo
+                    </a>
+                </div>
+            </div>
+
+            <!-- Imagen del proyecto añadida aquí -->
+            <img src="img/asesor_ia_local.png" alt="Asesor de Inteligencia Artificial Local" style="width: 100%; border-radius: 12px; margin-bottom: 2rem; border: 1px solid var(--border); box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+
+            <div class="project-full-details">
+                <p class="project-tagline" style="font-size: 1.2rem; margin-bottom: 2rem; color: var(--primary); font-weight: 600;">
+                    Filtrado inteligente y recomendaciones de modelos LLM Open Source para entornos locales.
+                </p>
+                
+                <div style="background: var(--bg-darker); padding: 2rem; border-radius: 12px; border: 1px solid var(--border); margin: 2rem 0;">
+                    <h3>El Reto</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 1rem;">
+                        El ecosistema de Inteligencia Artificial Open Source es inmenso y crece cada día. Para un usuario o desarrollador, resulta abrumador saber <strong>qué modelo puede ejecutar en su ordenador local</strong> según la memoria RAM que tiene, el idioma que necesita o la tarea específica que quiere realizar (código, texto, visión).
+                    </p>
+                    <h3>La Solución</h3>
+                    <p style="color: var(--text-muted);">
+                        Una aplicación web Fullstack que combina un motor de filtrado autónomo con un <strong>asistente conversacional inteligente</strong>. La herramienta analiza los requisitos del usuario, cruza los datos con un catálogo actualizado y devuelve el comando exacto para instalar el modelo ideal a través de Ollama.
+                    </p>
+                </div>
+
+                <h3>Arquitectura y Funcionamiento</h3>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem;">El sistema fue diseñado priorizando la automatización y la tolerancia a fallos:</p>
+                <ul style="color: var(--text-muted); padding-left: 1.5rem; margin-bottom: 2rem; line-height: 1.8;">
+                    <li><strong>Motor de Scraping Autónomo:</strong> Un script asíncrono en segundo plano consulta la API de Hugging Face cada 24 horas, clasificando y actualizando el catálogo de modelos automáticamente.</li>
+                    <li><strong>Alta Disponibilidad (Failover):</strong> La lógica del chat integra dos LLMs distintos. Si la API principal (Google Gemini) se satura o cae, el backend redirige la petición silenciosamente a Cohere, garantizando un servicio ininterrumpido.</li>
+                    <li><strong>Memoria de Barrido Cronológico:</strong> El sistema lee el historial completo del chat. Si el usuario cambia de opinión sobre sus requisitos (ej: rectifica su memoria RAM), el algoritmo actualiza los filtros en tiempo real antes de consultar a la IA.</li>
+                </ul>
+
+                <h3 style="margin-top: 3rem;">Puntos Fuertes del Proyecto</h3>
+                <div class="about-grid-modern" style="gap: 1.5rem; margin-bottom: 3rem;">
+                    <div style="background: var(--card); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border);">
+                        <h4 style="color: var(--primary); margin-bottom: 0.5rem;"><i class="fa-solid fa-server"></i> Resiliencia Backend</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Manejo avanzado de excepciones en FastAPI, peticiones asíncronas seguras y sistema de respaldo de APIs sin afectar la experiencia del usuario.</p>
+                    </div>
+                    <div style="background: var(--card); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border);">
+                        <h4 style="color: var(--primary); margin-bottom: 0.5rem;"><i class="fa-solid fa-desktop"></i> UX Optimizada</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Interfaz moderna y minimalista con <em>Dark Mode</em>, notificaciones nativas y parseo automático de código para facilitar su copiado.</p>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 3rem; border-top: 1px solid var(--border); padding-top: 2rem;">Stack Tecnológico</h3>
+                <div class="tech-stack-container" style="margin-top: 0; padding-top: 1rem; border: none;">
+                    <div class="skills-grid" style="gap: 15px;">
+                        <span class="tag" style="font-size: 1rem;"><i class="fa-brands fa-python"></i> Python / FastAPI</span>
+                        <span class="tag" style="font-size: 1rem;"><i class="fa-brands fa-js"></i> Vanilla JS</span>
+                        <span class="tag" style="font-size: 1rem;"><i class="fa-solid fa-brain"></i> Gemini & Cohere APIs</span>
+                        <span class="tag" style="font-size: 1rem;"><i class="fa-brands fa-docker"></i> Docker</span>
+                        <span class="tag" style="font-size: 1rem;"><i class="fa-solid fa-cloud"></i> Hugging Face Spaces</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
